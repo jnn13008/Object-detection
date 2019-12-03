@@ -29,6 +29,7 @@ void callback(const sensor_msgs::Image::ConstPtr& im_msg, const darknet_ros_msgs
 	depths = NULL;
 	int size = 0;
 	
+	ROS_INFO("elements in array: %d",sizeof(bb_msg->bounding_boxes)/sizeof(bb_msg->bounding_boxes[0]));
 	coordinates(2) = 10;
 	//look for closest human with for loop
 	for(int i = 0; i < sizeof(bb_msg->bounding_boxes)/sizeof(bb_msg->bounding_boxes[0]); i++) {
